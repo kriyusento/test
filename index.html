@@ -8,6 +8,13 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- Video Background -->
+<video autoplay muted loop playsinline id="background-video">
+    <source src="assets/Download.mp4" type="video/mp4">
+</video>
+
+<!-- Overlay gelap -->
+<div class="video-overlay" aria-hidden="true"></div>
 <body>
 
   <noscript>
@@ -17,7 +24,7 @@
   </noscript>
   
 <!-- Musik latar: audio diambil dari file MP4 -->
-<audio id="bgm" src="assets/a-thousand-years.mp4.mp3" loop preload="auto"></audio>
+<audio id="bgm" src="assets/Download.mp3" loop preload="auto"></audio>
 
 <button id="musicButton" class="music-btn" type="button" hidden>♡ Play Our Song</button>
 
