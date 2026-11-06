@@ -341,12 +341,12 @@ const BOOT_STEPS = [
   { text: "Connecting to your heart...", pct: 45 },
   { text: "Checking compatibility...", pct: 72 },
   {
-    text: "Error 404: Cannot find anyone like you.",
+    text: "Error 404: Cannot find anyone quite like you.",
     pct: 90,
     cls: "err"
   },
   {
-    text: "Successfully found: The One ❤️",
+    text: "Successfully found: You ❤️",
     pct: 100,
     cls: "ok"
   }
@@ -405,7 +405,7 @@ enterHooks.hero = async () => {
 
   await typeText(
     $("#heroSub"),
-    "Welcome to Love.exe — the only program that never crashes, even when it spends 24/7 thinking about you.",
+    "Welcome to Love.exe — a small program I made just for you.",
     30
   );
 
@@ -431,18 +431,18 @@ const SNIPPETS = [
     file: "feelings.js",
     code:
 `const myFeelings = {
-  love: "Infinite",
+  love: "A lot",
   happiness: "When I'm with you",
   favoritePerson: "You",
-  status: "Forever"
+  status: "Still counting"
 };`
   },
   {
-    file: "forever.js",
+    file: "smile.js",
     code:
-`while (true) {
-  IWillLoveYou();
-  // no break; statement found 😌
+`if (you.smile()) {
+  myDay.improve();
+  // works every time 😌
 }`
   },
   {
@@ -452,7 +452,7 @@ const SNIPPETS = [
   forget(you);
 } catch (error) {
   console.log("Error: memory not found");
-  // TODO: stop thinking about you (never)
+  // TODO: stop smiling when I think of you
 }`
   }
 ];
@@ -506,20 +506,19 @@ const LETTER = () =>
 
 To My Favorite Person, ❤️
 
-My dearest,
-I don't know how to put all my feelings into words, but I want you to know that you mean more to me than you could ever imagine.
-Every time I think of you, I find another reason to smile. Even on the busiest days, the thought of you makes everything feel a little lighter. You have this beautiful way of making ordinary moments feel extraordinary.
+Hi,
+I don't know how to put all my feelings into words, but I want you to know that you mean a lot to me.
+Every time I think of you, I find another reason to smile. Even on busy days, the thought of you makes things feel a little lighter. You have a way of making ordinary moments feel special.
 
-I may not always have the perfect words, and I may not be able to give you the whole world, but I promise to give you something real: my time, my attention, my honesty, and a heart that chooses you every single day.
+I may not always have the perfect words, but I can promise something real: my time, my attention, my honesty, and a heart that chooses you.
 
-If I could choose one place to be, it would be beside you. If I could choose one moment to repeat, it would be every moment spent with you.
+If I could choose one place to be, it would be beside you.
 
-Thank you for being you. Thank you for existing in this world and somehow making my little corner of it so much brighter.
+Thank you for being you, and for being part of my life. It's brighter with you in it.
 
 I don't need a perfect love story. I just want a story with you.
 
-Forever yours,
-❤️
+Sincerely,
 ${CONFIG.fromName} ❤️`;
 
 const letterSkip = { v: false };
@@ -578,12 +577,12 @@ onceClick($("#btnCompile"), () => showStage("compile"));
    9. COMPILE OUR LOVE
    --------------------------------------------------------- */
 const COMPILE_STEPS = [
-  { text: "$ gcc our_love.c -o Love.exe -lforever", pct: 10 },
+  { text: "$ gcc our_love.c -o Love.exe -lfeelings", pct: 10 },
   { text: "Compiling memories.c ............... OK", pct: 32 },
   { text: "Compiling laughter.c ............... OK", pct: 54 },
   { text: "Linking you.o + me.o ............... OK", pct: 76 },
   { text: "Optimizing happiness (-O3) ......... OK", pct: 92 },
-  { text: "Warnings: 0 | Errors: 0 | Reasons to smile: 99999", pct: 100 }
+  { text: "Warnings: 0 | Errors: 0 | Reasons to smile: 1 (you)", pct: 100 }
 ];
 
 enterHooks.compile = async () => {
@@ -772,14 +771,14 @@ onceClick($("#btnSurprise"), () => showStage("final"));
 /* ---------------------------------------------------------
    11. FINAL SURPRISE
    --------------------------------------------------------- */
-const FINAL_QUOTE = `And if someday you ever wonder how much you mean to me, just remember this: among all the people I could have met, all the places I could have been, and all the stories I could have lived, I would still choose you. Today, tomorrow, and in every lifetime.
+const FINAL_QUOTE = `If you ever wonder how much you mean to me, just remember this: out of all the people I could have met, I'm really glad it was you. Thank you for being part of my days.
 
-With all my love,
-Yours, always. ❤️`;
+With love,
+${CONFIG.fromName} ❤️`;
 
 const FINAL_CODE =
 `if (you == myFavoritePerson) {
-    future = "Us Together ❤️";
+    future = "Us, maybe? 😳";
 }`;
 
 enterHooks.final = async () => {
@@ -806,8 +805,7 @@ enterHooks.final = async () => {
 
   const sig = $("#signature");
 
-  sig.textContent =
-    `— ${CONFIG.fromName}, who will always choose you ❤️`;
+  sig.textContent = `— ${CONFIG.fromName} ❤️`;
 
   reveal(sig);
 
